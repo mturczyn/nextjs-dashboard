@@ -10,6 +10,7 @@ import {
     ErrorButtonWithErrorInCallback,
 } from '@/app/ui/custom-learning/error-button'
 import LinkToNotExistingInvoice from '@/app/ui/custom-learning/not-found-invoice'
+import { GenerateServerSideError } from '@/app/ui/custom-learning/server-side-error'
 
 export default async function Page({
     searchParams,
@@ -38,6 +39,7 @@ export default async function Page({
                 <ErrorButton />
                 <ErrorButtonWithErrorInCallback />
                 <LinkToNotExistingInvoice />
+                <GenerateServerSideError />
             </div>
             <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
                 <Search placeholder="Search invoices..." />
