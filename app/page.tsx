@@ -28,10 +28,10 @@ export default function Page() {
                     <div className="h-0 w-0 border-b-[30px] border-l-[20px] border-r-[20px] border-b-black border-l-transpraent border-r-transparent"></div>
                     <a
                         className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-                        href="https://www.linkedin.com/in/michał-turczyn-6851a2117/"
+                        href="https://github.com/mturczyn/nextjs-dashboard/blob/main/README.md"
                         target="_blank"
                     >
-                        Secret LinkedIn profile
+                        Notes from the Next.js course
                     </a>
                     <Link
                         href="/dashboard"

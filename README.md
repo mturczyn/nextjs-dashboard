@@ -1,4 +1,6 @@
-## Next.js App Router Course - Starter
+# Next.js App Router Course
+
+## Starter Template
 
 This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
 
@@ -6,7 +8,7 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 
 ## Notes
 
-### Chapter 13
+### Chapter 13 - Error Handling
 
 In order to add global error handler in Next.js, we need to add `error.tsx` file.
 It works similair to `layout.tsx`, it is applied to all sub-routes (so subdirectories).
@@ -16,3 +18,7 @@ It works similair to `layout.tsx`, it is applied to all sub-routes (so subdirect
 In order to handle not found error, `page.tsx` component should use `notFound` method from `next/navigation`, which sets correct HTTP code. Then, create `not-found.tsx` file, which will display not found page.
 
 This takes precednce over `error.tsx` page.
+
+### Chapter 14 - Accessibility
+
+Next.js has built-in accessibility check, which can be performed by `next lint` command. By adding to `package.json`, we can then use it in CI/CD pipeline or in local development, etc.
