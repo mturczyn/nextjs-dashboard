@@ -35,8 +35,8 @@ Then, in root, we need to add following files:
 
 Then, add Next.js middleware to protect routes from being accessed by unauthenticated user.
 
-This is done by defining `callbacks` in `auth.config.ts` file and adding middleware in `middleware.ts` file in root directory.
+This is done by defining `callbacks` in `auth.config.ts` file and adding middleware in `middleware.ts` file in root directory (at the same level as app or pages or src folder).
 
-Then we create forms in order to handle log in and log out actions, and create server actions to handle those.
+Then we create forms in order to handle log in and log out actions, and create server actions to handle those. Most of implementation is in the NextAuth.js package, which exposes `auth`, `signIn` and `signOut` methods.
 
 For password hashing `bcrypt` package is used.
