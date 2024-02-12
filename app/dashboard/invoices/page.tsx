@@ -11,6 +11,11 @@ import {
 } from '@/app/ui/custom-learning/error-button'
 import LinkToNotExistingInvoice from '@/app/ui/custom-learning/not-found-invoice'
 import { GenerateServerSideError } from '@/app/ui/custom-learning/server-side-error'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Invoices',
+}
 
 export default async function Page({
     searchParams,
