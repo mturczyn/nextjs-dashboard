@@ -206,3 +206,41 @@ title: {
 },
 ```
 Other pages then need to only define, for example `Invoices` to get title of `Invoices | Acme Dashboard`.
+
+# Other notes
+
+## Middleware
+
+As mentioned in the Next.js course, when defining middleware, we need to keep in mind following:
+
+Middleware will be invoked for every route in your project. The following is the execution order:
+1. `headers` from `next.config.js`
+2. `redirects` from `next.config.js`
+3. Middleware (`rewrites`, `redirects`, etc.)
+4. `beforeFiles` (`rewrites`) from `next.config.js`
+5. Filesystem routes (`public/`, `_next/static/`, `pages/`, `app/`, etc.)
+6. `afterFiles` (`rewrites`) from `next.config.js`
+7. Dynamic Routes (`/blog/[slug]`)
+8. `fallback` (`rewrites`) from `next.config.js`
+
+For example of custom middleware, `middleware.ts` file can be inspected.
+
+Also, in `next.config.js` file we defined custom `headers`, which add headers to HTTP responses.
+
+At the end of the middleware we need to call `NextResponse.next()` method to invoke further middleware. Generally [`NextResponse`](https://nextjs.org/docs/app/building-your-application/routing/middleware#nextresponse) provides useful API for redirects, rewrites, etc.
+
+## Edge and nodejs runtimes
+
+Next.js application can run on either nodejs or Edge runtime. 
+
+When hosting on Vercel (to check on different cloud providers), we can `export` `runtime` variable from either a page or layout, to decide on which platform code generating the page will be run. Example:
+```
+export const runtime = 'edge'
+```
+or 
+```
+export const runtime = 'nodejs'
+```
+The default value (when not specified) is `nodejs`.
+
+When the variable is exported from layout file, it applies to all subroutes.
