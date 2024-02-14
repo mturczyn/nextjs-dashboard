@@ -244,3 +244,15 @@ export const runtime = 'nodejs'
 The default value (when not specified) is `nodejs`.
 
 When the variable is exported from layout file, it applies to all subroutes.
+
+## Client Side Hooks
+
+When using client side hooks, such as `useState`, it is mandatory for the component using it to be client side (`client side` directive must be used).
+
+## Server Only Components
+
+Components can be forced to be run always on server by adding one import:
+```
+import 'server-only'
+```
+Then, in any client component trying to import "server-only" component would throw error at build time.
